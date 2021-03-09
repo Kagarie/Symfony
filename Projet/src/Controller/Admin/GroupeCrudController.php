@@ -24,7 +24,6 @@ class GroupeCrudController extends AbstractCrudController
             IntegerField::new("nombreMembre"),
             TextField::new('genre'),
             ImageField::new('cheminLogo')
-                ->setBasePath('images')
                 ->setUploadDir('public/images/groupe_logo')
                 ->setUploadedFileNamePattern("[name] . [extension]")
                 ->setRequired(false),

@@ -35,12 +35,13 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-lock');
-        yield MenuItem::linkToCrud('User', 'fas	fa-user', User::class);
+        if ($this->isGranted('ROLE_SUPER_ADMIN'))
+            yield MenuItem::linkToCrud('User', 'fas	fa-user', User::class);
         yield MenuItem::subMenu('Musique', 'fas fa-music')->setSubItems([
             MenuItem::linkToCrud('Groupe', 'fas fa-users', Groupe::class),
             MenuItem::linkToCrud('Album', 'fas fa-record-vinyl', Album::class),
             MenuItem::linkToCrud('chanson', 'fas fa-music', Musique::class),]);
-        yield MenuItem::linkToRoute('Retour au site','fa fa-home', 'index');
+        yield MenuItem::linkToRoute('Retour au site', 'fa fa-home', 'index');
 
     }
 }
