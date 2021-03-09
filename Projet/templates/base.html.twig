@@ -31,9 +31,7 @@
             <li><a href="{{ path('admin') }}">Administration</a></li>
         {% endif %}
         <!-- Si super admin -->
-        {% if is_granted('ROLE_SUPER_ADMIN') %}
-            <li><a href="#">Staff</a></li>
-        {% endif %}
+
         {% if app.user %}
             <li><a href="{{ path('app_logout') }}">Dèconnexion</a></li>
         {% endif %}

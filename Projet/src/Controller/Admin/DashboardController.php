@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Album;
 use App\Entity\Groupe;
 use App\Entity\Musique;
+use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -33,9 +34,13 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('Groupe', 'fas fa-list', Groupe::class);
-        yield MenuItem::linkToCrud('Album', 'fas fa-record-vinyl', Album::class);
-        yield MenuItem::linkToCrud('Musique', 'fas fa-record-vinyl', Musique::class);
+        yield MenuItem::linktoDashboard('Dashboard', 'fa fa-lock');
+        yield MenuItem::linkToCrud('User', 'fas	fa-user', User::class);
+        yield MenuItem::subMenu('Musique', 'fas fa-music')->setSubItems([
+            MenuItem::linkToCrud('Groupe', 'fas fa-users', Groupe::class),
+            MenuItem::linkToCrud('Album', 'fas fa-record-vinyl', Album::class),
+            MenuItem::linkToCrud('chanson', 'fas fa-music', Musique::class),]);
+        yield MenuItem::linkToRoute('Retour au site','fa fa-home', 'index');
+
     }
 }

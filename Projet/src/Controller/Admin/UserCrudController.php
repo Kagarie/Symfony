@@ -2,25 +2,25 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Musique;
+use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
-class MusiqueCrudController extends AbstractCrudController
+class UserCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return Musique::class;
+        return User::class;
     }
 
 
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('titre'),
-            AssociationField::new('album'),
-            TextField::new('cheminMusique')
+            TextField::new('nom'),
+            TextField::new('prenom'),
+            ArrayField::new('roles')
         ];
     }
 
