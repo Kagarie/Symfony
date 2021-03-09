@@ -35,11 +35,11 @@ security:
   # Easy way to control access for large sections of your site
   # Note: Only the *first* access control that matches will be used
   access_control:
-    - { path: ^/panier, roles: USER }
-    - { path: ^/admin, roles: ADMIN }
-    - { path: ^/super_admin, roles: SUPER_ADMIN }
+    - { path: ^/panier, roles: ROLE_USER }
+    - { path: ^/admin, roles: ROLE_ADMIN }
+    - { path: ^/super_admin, roles: ROLE_SUPER_ADMIN }
 
   role_hierarchy:
-      ADMIN: USER
-      SUPER_ADMIN: ADMIN
+      ADMIN: ROLE_USER
+      SUPER_ADMIN: ROLE_ADMIN
 

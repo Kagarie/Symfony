@@ -18,29 +18,32 @@
     <ul>
         <li><a href="{{ path('index') }}">Accueil</a></li>
         <li><a href="{{ path('catalogue') }}">Catalogue</a></li>
+        {% if app.user == null %}
         <li><a href="{{ path('app_login') }}">Connexion</a>
-        {%  if is_granted('USER') == false %}
         <li><a href="{{ path('inscription') }}">Inscription</a>
             {% endif %}
             <!-- Si co -->
-            {% if is_granted('USER') %}
+            {% if is_granted('ROLE_USER') %}
         <li><a href="{{ path('panier') }}">Panier</a></li>
         {% endif %}
         <!-- Si admin -->
-        {% if is_granted('ADMIN') %}
+        {% if is_granted('ROLE_ADMIN') %}
             <li><a href="{{ path('admin') }}">Administration</a></li>
         {% endif %}
         <!-- Si super admin -->
-        {% if is_granted('SUPER_ADMIN') %}
+        {% if is_granted('ROLE_SUPER_ADMIN') %}
             <li><a href="#">Staff</a></li>
         {% endif %}
-        {% if is_granted('USER') %}
-            <li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
+        {% if app.user %}
+            <li><a href="{{ path('app_logout') }}">Dèconnexion</a></li>
         {% endif %}
-
-
     </ul>
     </nav>{% endblock %}
+{% if app.user %}
+    <div class="mb-3">
+        {{ app.user.getNom() }}, {{ app.user.getPrenom() }}
+    </div>
+{% endif %}
 <body>
 {% block body %}{% endblock %}
 </body>
