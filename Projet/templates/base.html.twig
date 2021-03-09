@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+    {% block stylesheets %}
+        {# {{ encore_entry_link_tags('app') }} #}
+    {% endblock %}
+
+    {% block javascripts %}
+        {# {{ encore_entry_script_tags('app') }} #}
+    {% endblock %}
+</head>
+{% block nav %}
+    <nav>
+    <ul>
+        <li><a href="{{ path('index') }}">Accueil</a></li>
+        <li><a href="{{ path('catalogue') }}">Catalogue</a></li>
+        <li><a href="{{ path('app_login') }}">Connexion</a>
+        {%  if is_granted('USER') == false %}
+        <li><a href="{{ path('inscription') }}">Inscription</a>
+            {% endif %}
+            <!-- Si co -->
+            {% if is_granted('USER') %}
+        <li><a href="{{ path('panier') }}">Panier</a></li>
+        {% endif %}
+        <!-- Si admin -->
+        {% if is_granted('ADMIN') %}
+            <li><a href="{{ path('admin') }}">Administration</a></li>
+        {% endif %}
+        <!-- Si super admin -->
+        {% if is_granted('SUPER_ADMIN') %}
+            <li><a href="#">Staff</a></li>
+        {% endif %}
+        {% if is_granted('USER') %}
+            <li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
+        {% endif %}
+
+
+    </ul>
+    </nav>{% endblock %}
+<body>
+{% block body %}{% endblock %}
+</body>
+</html>
