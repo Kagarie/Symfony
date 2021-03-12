@@ -61,6 +61,13 @@
                     {% if app.user %}
                         <li><a href="{{ path('app_logout') }}">Dèconnexion</a></li>
                     {% endif %}
+
+                    <!-- si l'utilisateur existe -->
+                    {% if app.user %}
+
+                        <li><a>{{ app.user.getNom() }}, {{ app.user.getPrenom() }}</a></li>
+
+                    {% endif %}
                 </ul>
             </div>
         </div>
@@ -68,11 +75,7 @@
 
 
 {% endblock %}
-{% if app.user %}
-    <div class="mb-3">
-        {{ app.user.getNom() }}, {{ app.user.getPrenom() }}
-    </div>
-{% endif %}
+
 <body>
 {% block body %}{% endblock %}
 {% block js %}
