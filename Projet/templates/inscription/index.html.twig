@@ -3,7 +3,8 @@
 
 {% block body %}
     {{ form_start(form) }}
+    <h2>Inscription</h2>
     {{ form_widget(form) }}
-    <button type="submit">Ajouter</button>
+    <input type="submit" id='submit' value="S'inscrire">
     {{ form_end(form) }}
 {% endblock %}
