@@ -1,15 +1,30 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello DefaultController!{% endblock %}
+{% block title %}Accueil{% endblock %}
 
 {% block body %}
     <header class="section background-white">
         <div class="line text-center">
-            <h1 class="text-dark text-s-size-30 text-m-size-40 text-l-size-headline text-thin text-line-height-1">Music web</h1>
+            <h1 class="text-dark text-s-size-30 text-m-size-40 text-l-size-headline text-thin text-line-height-1">
+                Musiques</h1>
             <p class="margin-bottom-0 text-size-16 text-dark">Duis autem vel eum iriure dolor in hendrerit in vulputate
                 velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.<br>
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.</p>
         </div>
     </header>
+    <section>
+        {% for g in groupe %}
+            <div style="width: 20%; display: inline-block; text-align: center; border: 1px solid; margin-left: 5px ">
+                <a href="#">
+                    <h2>{{ g.nom }}</h2>
+                    <p>Nombre de membres : {{ g.nombreMembre }}</p>
+                    <p>Genre : {{ g.genre }}</p>
+                    {% if g.cheminLogo is defined %}
+                        <img src="images/groupe_logo/{{ g.cheminLogo }}" style="height: 150px;width: 200px; margin: 0 auto 7px"></td>
+                    {% endif %}
+                </a>
+            </div>
+        {% endfor %}
+    </section>
 
 {% endblock %}

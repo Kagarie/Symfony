@@ -12,8 +12,10 @@ class DefaultController extends AbstractController
     #[Route('/', name: 'index')]
     public function index(): Response
     {
+        $em = $this->getDoctrine()->getManager();
+        $groupe = $em->getRepository(Groupe::class)->findAll();
         return $this->render('default/index.html.twig', [
-            'controller_name' => 'DefaultController',
+            "groupe" => $groupe
         ]);
     }
 
