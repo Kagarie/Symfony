@@ -3,18 +3,25 @@
 {% block title %}Catalogue{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/aymeric/code/projetSymfony/Projet/src/Controller/CatalogueController.php'|file_link(0) }}">src/Controller/CatalogueController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/aymeric/code/projetSymfony/Projet/templates/catalogue/index.html.twig'|file_link(0) }}">templates/catalogue/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <h1 style="margin: 0 auto; text-align: center; margin-bottom: 2em;">Listes des groupes </h1>
+    {{ form_start(form) }}
+    <h2>Inscription</h2>
+    {{ form_widget(form) }}
+    <input type="submit" id='submit' value="S'inscrire">
+    {{ form_end(form) }}
+    <section>
+        {% for g in groupe %}
+            <div style="width: 20%; display: inline-block; text-align: center; border: 1px solid; margin-left: 5px ">
+                <a href="#">
+                    <h2>{{ g.nom }}</h2>
+                    <p>Nombre de membres : {{ g.nombreMembre }}</p>
+                    <p>Genre : {{ g.genre }}</p>
+                    {% if g.cheminLogo is defined %}
+                        <img src="images/groupe_logo/{{ g.cheminLogo }}"
+                             style="height: 150px;width: 200px; margin: 0 auto 7px"></td>
+                    {% endif %}
+                </a>
+            </div>
+        {% endfor %}
+    </section>
 {% endblock %}

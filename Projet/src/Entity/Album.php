@@ -139,8 +139,4 @@ class Album
         return $this;
     }
 
-
-
-
-
 }

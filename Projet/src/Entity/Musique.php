@@ -23,14 +23,14 @@ class Musique
     private $cheminMusique;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Album::class, inversedBy="musiques")
-     */
-    private $album;
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
     private $titre;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Album::class, inversedBy="musiques")
+     */
+    private $album;
 
     public function getId(): ?int
     {
@@ -49,18 +49,6 @@ class Musique
         return $this;
     }
 
-    public function getAlbum(): ?Album
-    {
-        return $this->album;
-    }
-
-    public function setAlbum(?Album $album): self
-    {
-        $this->album = $album;
-
-        return $this;
-    }
-
     public function getTitre(): ?string
     {
         return $this->titre;
@@ -69,6 +57,18 @@ class Musique
     public function setTitre(string $titre): self
     {
         $this->titre = $titre;
+
+        return $this;
+    }
+
+    public function getAlbum(): ?Album
+    {
+        return $this->album;
+    }
+
+    public function setAlbum(?Album $album): self
+    {
+        $this->album = $album;
 
         return $this;
     }

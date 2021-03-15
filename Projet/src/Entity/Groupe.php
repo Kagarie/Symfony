@@ -49,7 +49,6 @@ class Groupe
         $this->albums = new ArrayCollection();
     }
 
-
     public function getId(): ?int
     {
         return $this->id;
@@ -137,5 +136,4 @@ class Groupe
 
         return $this;
     }
-
 }
