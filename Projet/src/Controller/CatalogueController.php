@@ -3,9 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Groupe;
-use App\Form\CatalogueType;
-use http\Env\Request;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -21,11 +21,13 @@ class CatalogueController extends AbstractController
         ]);
     }
 
-    public function recherche(Request $request)
+    #[Route('/groupe', name: 'groupe')]
+    public function groupe(Request $request): Response
     {
-        $groupe = new Groupe();
-        $form = $this->createForm(CatalogueType::class, $groupe);
-        $form->handleRequest($request);
-        return $this->render('catalogue/index.html.twig', ['form' => $form->createView()]);
+        $groupe = $request->attributes->get('_route_params');
+        return $this->render('catalogue/groupe.html.twig', [
+            "groupe" => $groupe
+        ]);
     }
+
 }
