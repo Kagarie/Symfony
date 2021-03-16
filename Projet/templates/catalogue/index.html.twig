@@ -7,11 +7,11 @@
     <section>
         {% for g in groupe %}
             <div style="width: 20%; display: inline-block; text-align: center; border: 1px solid; margin-left: 5px ">
-                <a href="<a href="{{ path("groupe",g) }}">
+                <a href="<a href="{{ path(('groupe',{groupe : g}) }}">
                 <h2>{{ g.nom }}</h2>
                 <p>Nombre de membres : {{ g.nombreMembre }}</p>
                 <p>Genre : {{ g.genre }}</p>
-                {% if g.cheminLogo is defined %}
+               r {% if g.cheminLogo is defined %}
                     <img src="images/groupe_logo/{{ g.cheminLogo }}"
                          style="height: 150px;width: 200px; margin: 0 auto 7px"></td>
                 {% endif %}
