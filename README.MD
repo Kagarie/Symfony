@@ -21,9 +21,11 @@ bin/console doctrine:fixtures:load
 ```
 Dans tous les cas vous aurez 3 utilisateurs avec chacun un rôle différent pour voir le fonctionnement du site
 
-user - mail : user@user mtp : user
-admin - mail : admin@admin mtp : admin
-super_admin - mail superAdmin@superAdmin mtp : super_admin
+|Utilisateur|Mail                  |Mot de pass |
+|:---------:|:--------------------:|:----------:|
+|user       | user@user            |user        |
+|admin      | admin@admin          |admin       |
+|super_admin| superAdmin@superAdmin|super_admin |
 
 
 Ce site utilise une template libre de droit que j'ai modifié en grande partie. De plus, n'étant pas le visuel du site qui est pris en compte je me suis pas atterdé dessus et je suis le premier à dire qu'il est loin d'être beau
