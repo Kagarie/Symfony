@@ -19,7 +19,7 @@ toutes les données comme ceci
 ```
 bin/console doctrine:fixtures:load
 ```
-En prime vous aurrez 3 utilisateurs avec chacun un rôle différent pour voir le fonctionnement du site
+Dans tous les cas vous aurez 3 utilisateurs avec chacun un rôle différent pour voir le fonctionnement du site
 
 user - mail : user@user mtp : user
 admin - mail : admin@admin mtp : admin
