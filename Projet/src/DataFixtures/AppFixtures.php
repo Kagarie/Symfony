@@ -5,8 +5,10 @@ namespace App\DataFixtures;
 use App\Entity\Album;
 use App\Entity\Groupe;
 use App\Entity\Musique;
+use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class AppFixtures extends Fixture
 {
@@ -26,7 +28,7 @@ class AppFixtures extends Fixture
 
         //Generation aleatoire des prix
         for ($i = 0; $i < count($titreAlbum); $i += 1)
-            $prix[] = rand(5, 18)*100;
+            $prix[] = rand(5, 18) * 100;
         $imageAlbum = array('tnt.jpg', 'ACDC-BackInBlack-Front.jpg', 'bleach.jpg', 'copertina-nevermind-nirvana.webp', 'Life Is Peachy.jpg', 'korn_issues.jpg', 'aventurier.jpg', 'le baiser.jpg', 'A_Night_at_the_Opera.jpg', 'Sheer Heart Attack.jpg', 'Twist_and_Shout.jpg', 'Something_New.jpg', 'destroyer.jpg', 'love gun.jpg', 'Iron-Maiden-Killers.jpg', 'album_iron_maiden_fear_of_the_dark.jpg', 'Love over Gold.jpg', 'BrothersDireStraits.png');
 
 
@@ -82,7 +84,37 @@ class AppFixtures extends Fixture
             $i += 1;
         endforeach;
 
+
+        /*
+         * USER
+         */
+        $email = array("user@user", "admin@admin", "superAdmin@superAdmin");
+        $role = array([], ["ROLE_USER", "ROLE_ADMIN"], ["ROLE_USER", "ROLE_SUPER_ADMIN"]);
+        $password = array("\$argon2id\$v=19\$m=65536,t=4,p=1\$d1cxeWltODB6d01Sby9TRg\$g4uxv1OWUzKm+KsOdnBPnlHWwHqHWXEGa1maidY0fiY", "\$argon2id\$v=19\$m=65536,t=4,p=1\$MDhPakhmUXdHa2c1NWJ2Ug\$DhlqUBRg/2NXMeeqhqHSnnRfx0eAxx6fSeZKYMRha24", "\$argon2id\$v=19\$m=65536,t=4,p=1\$eGRiNkRUa0QySHhKQWgzaA\$A4XJoRP22AbaI4Qfr4UHtp4TkQ4OiUCFt0L+sYAahf4");
+        $nom = array("user", "admin", "super_admin");
+        $prenom = array("user", "admin", "super_admin");
+
+        //ajout des utilisateurs
+        $i = 0;
+        foreach ($email as $mail):
+            $user = new User();
+            $user->setEmail($mail);
+            $user->setRoles($role[$i]);
+            $user->setPassword($password[$i]);
+            $user->setPrenom($prenom[$i]);
+            $user->setNom(($nom[$i]));
+
+            $manager->persist($user);
+            $i += 1;
+        endforeach;
+
         $manager->flush();
+    }
+
+    public function encode($mtp, UserPasswordEncoderInterface $passwordEncoder)
+    {
+        return $passwordEncoder->encodePassword($mtp);
+
     }
 
 
