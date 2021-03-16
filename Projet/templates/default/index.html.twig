@@ -12,9 +12,9 @@
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.</p>
         </div>
     </header>
-    <section>
+    <section style="text-align: center">
         {% for g in groupe %}
-            <div style="width: 20%; display: inline-block; text-align: center; border: 1px solid; margin-left: 5px ">
+            <div style="width: 19%; display: inline-block; text-align: center; border: 1px solid;margin-top: 2em;">
                 <a href="{{ path("groupe",[g]) }}">
                     <h2>{{ g.nom }}</h2>
                     <p>Nombre de membres : {{ g.nombreMembre }}</p>

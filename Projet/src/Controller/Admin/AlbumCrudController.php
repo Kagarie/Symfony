@@ -24,7 +24,7 @@ class AlbumCrudController extends AbstractCrudController
     {
         return [
             TextField::new('titre'),
-          MoneyField::new('prix')->setCurrency('EUR'),
+            MoneyField::new('prix')->setCurrency('EUR'),
             ImageField::new('cheminImage')
                 ->setBasePath('images')
                 ->setUploadDir('public/images/album')

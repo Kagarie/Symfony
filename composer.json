@@ -1,0 +1,5 @@
+{
+    "require": {
+        "pugx/autocompleter-bundle": "^1.7"
+    }
+}

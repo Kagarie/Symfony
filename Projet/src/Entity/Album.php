@@ -49,8 +49,6 @@ class Album
         $this->musiques = new ArrayCollection();
     }
 
-
-
     public function getId(): ?int
     {
         return $this->id;

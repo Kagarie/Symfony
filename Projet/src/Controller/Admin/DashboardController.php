@@ -35,7 +35,7 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-lock');
-        if ($this->isGranted('ROLE_SUPER_ADMIN'))
+        //if ($this->isGranted('ROLE_SUPER_ADMIN'))
             yield MenuItem::linkToCrud('User', 'fas	fa-user', User::class);
         yield MenuItem::subMenu('Musique', 'fas fa-music')->setSubItems([
             MenuItem::linkToCrud('Groupe', 'fas fa-users', Groupe::class),

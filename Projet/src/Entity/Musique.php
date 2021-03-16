@@ -32,6 +32,16 @@ class Musique
      */
     private $album;
 
+    /**
+     * Musique constructor.
+     * @param $album
+     */
+    public function __construct($titre)
+    {
+        $this->titre = $titre;
+    }
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -72,4 +82,11 @@ class Musique
 
         return $this;
     }
+
+    public function __toString(): string
+    {
+        // TODO: Implement __toString() method.
+        return $this->getTitre();
+    }
+
 }
