@@ -1,7 +1,9 @@
-<center> <h1> Projet Symfony S4 </h1></center>
+# Projet Symfony S4 
 
 - Faire le catalogue (traitement de la musique)
 - Faire le panier
+
+---
 
 ## Installation
 
