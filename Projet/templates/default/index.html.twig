@@ -13,9 +13,9 @@
         </div>
     </header>
     <section style="text-align: center">
-        {% for g in groupe %}
+        {% for g in groupes %}
             <div style="width: 19%; display: inline-block; text-align: center; border: 1px solid;margin-top: 2em;">
-                <a href="{{ path("groupe",[g]) }}">
+                <a href="{{ path('groupe', {groupe :g}) }}">
                     <h2>{{ g.nom }}</h2>
                     <p>Nombre de membres : {{ g.nombreMembre }}</p>
                     <p>Genre : {{ g.genre }}</p>

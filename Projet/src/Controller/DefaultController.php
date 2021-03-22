@@ -15,7 +15,7 @@ class DefaultController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $groupe = $em->getRepository(Groupe::class)->findAll();
         return $this->render('default/index.html.twig', [
-            "groupe" => $groupe
+            "groupes" => $groupe
         ]);
     }
 
