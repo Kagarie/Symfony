@@ -35,7 +35,7 @@ class AppFixtures extends Fixture
 
         //Generation aleatoire des prix
         for ($i = 0; $i < count($titreAlbum); $i += 1)
-            $prix[] = rand(5, 18)*100;
+            $prix[] = rand(5, 18) * 100;
         $imageAlbum = array('tnt.jpg', 'ACDC-BackInBlack-Front.jpg', 'bleach.jpg', 'copertina-nevermind-nirvana.webp', 'Life Is Peachy.jpg', 'korn_issues.jpg', 'aventurier.jpg', 'le baiser.jpg', 'A_Night_at_the_Opera.jpg', 'Sheer Heart Attack.jpg', 'Twist_and_Shout.jpg', 'Something_New.jpg', 'destroyer.jpg', 'love gun.jpg', 'Iron-Maiden-Killers.jpg', 'album_iron_maiden_fear_of_the_dark.jpg', 'Love over Gold.jpg', 'BrothersDireStraits.png');
 
 
@@ -84,7 +84,8 @@ class AppFixtures extends Fixture
         //ajouts des chansons
         $i = 0;
         foreach ($titreMusique as $tm):
-            $musique = new Musique($tm);
+            $musique = new Musique();
+            $musique->setTitre($tm);
             $musique->setCheminMusique($musiqueChemin[$i]);
             $musique->setAlbum($tabAlbum[$i]);
             $manager->persist($musique);

@@ -32,15 +32,6 @@ class Musique
      */
     private $album;
 
-    /**
-     * Musique constructor.
-     * @param $album
-     */
-    public function __construct($titre)
-    {
-        $this->titre = $titre;
-    }
-
 
     /**
      * @return int|null

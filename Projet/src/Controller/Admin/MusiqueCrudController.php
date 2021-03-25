@@ -22,12 +22,11 @@ class MusiqueCrudController extends AbstractCrudController
         return [
             TextField::new('titre'),
             AssociationField::new('album'),
-            ImageField::new('cheminMusique')
+            $musique = ImageField::new('cheminMusique')
                 ->setBasePath('musiques')
                 ->setUploadDir('public/musiques/')
                 ->setUploadedFileNamePattern("[name] . [extension]")
                 ->setRequired(false),
-
         ];
     }
 
