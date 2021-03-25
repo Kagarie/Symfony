@@ -44,21 +44,34 @@ class Groupe
      */
     private $albums;
 
+    /**
+     * Groupe constructor.
+     */
     public function __construct()
     {
         $this->albums = new ArrayCollection();
     }
 
+    /**
+     * @return int|null
+     */
     public function getId(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * @return string|null
+     */
     public function getNom(): ?string
     {
         return $this->nom;
     }
 
+    /**
+     * @param string $nom
+     * @return $this
+     */
     public function setNom(string $nom): self
     {
         $this->nom = $nom;
@@ -66,11 +79,18 @@ class Groupe
         return $this;
     }
 
+    /**
+     * @return int|null
+     */
     public function getNombreMembre(): ?int
     {
         return $this->nombreMembre;
     }
 
+    /**
+     * @param int $nombreMembre
+     * @return $this
+     */
     public function setNombreMembre(int $nombreMembre): self
     {
         $this->nombreMembre = $nombreMembre;
@@ -78,11 +98,18 @@ class Groupe
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getCheminLogo(): ?string
     {
         return $this->cheminLogo;
     }
 
+    /**
+     * @param string|null $cheminLogo
+     * @return $this
+     */
     public function setCheminLogo(?string $cheminLogo): self
     {
         $this->cheminLogo = $cheminLogo;
@@ -90,11 +117,18 @@ class Groupe
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getGenre(): ?string
     {
         return $this->genre;
     }
 
+    /**
+     * @param string $genre
+     * @return $this
+     */
     public function setGenre(string $genre): self
     {
         $this->genre = $genre;
@@ -102,6 +136,9 @@ class Groupe
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function __toString()
     {
         return $this->getNom();
@@ -115,6 +152,10 @@ class Groupe
         return $this->albums;
     }
 
+    /**
+     * @param Album $album
+     * @return $this
+     */
     public function addAlbum(Album $album): self
     {
         if (!$this->albums->contains($album)) {
@@ -125,6 +166,10 @@ class Groupe
         return $this;
     }
 
+    /**
+     * @param Album $album
+     * @return $this
+     */
     public function removeAlbum(Album $album): self
     {
         if ($this->albums->removeElement($album)) {

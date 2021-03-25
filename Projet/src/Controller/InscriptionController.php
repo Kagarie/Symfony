@@ -9,9 +9,18 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
+/**
+ * Class InscriptionController
+ * @package App\Controller
+ */
 class InscriptionController extends AbstractController
 {
 
+    /**
+     * @param Request $request
+     * @param UserPasswordEncoderInterface $passwordEncoder
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     */
     #[Route('/inscription', name: 'inscription')]
     public function ajoutUser(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {

@@ -42,16 +42,26 @@ class Musique
     }
 
 
+    /**
+     * @return int|null
+     */
     public function getId(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * @return string|null
+     */
     public function getCheminMusique(): ?string
     {
         return $this->cheminMusique;
     }
 
+    /**
+     * @param string|null $cheminMusique
+     * @return $this
+     */
     public function setCheminMusique(?string $cheminMusique): self
     {
         $this->cheminMusique = $cheminMusique;
@@ -59,11 +69,18 @@ class Musique
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getTitre(): ?string
     {
         return $this->titre;
     }
 
+    /**
+     * @param string $titre
+     * @return $this
+     */
     public function setTitre(string $titre): self
     {
         $this->titre = $titre;
@@ -71,11 +88,18 @@ class Musique
         return $this;
     }
 
+    /**
+     * @return Album|null
+     */
     public function getAlbum(): ?Album
     {
         return $this->album;
     }
 
+    /**
+     * @param Album|null $album
+     * @return $this
+     */
     public function setAlbum(?Album $album): self
     {
         $this->album = $album;
@@ -83,6 +107,9 @@ class Musique
         return $this;
     }
 
+    /**
+     * @return string
+     */
     public function __toString(): string
     {
         // TODO: Implement __toString() method.

@@ -21,6 +21,9 @@
               rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/form.css">
+
+        <!-- Icone du site -->
+        <link rel="icon" type="image/png" sizes="16x16" href="https://www.icone-png.com/png/41/40803.png">
     {% endblock %}
 
 </head>
@@ -28,12 +31,11 @@
 
 
 {% block nav %}
-
-    <nav class="background-transparent background-transparent-hightlight full-width sticky">
+    <nav class="nav">
         <div class="s-12 l-10">
             <div class="top-nav right">
-                <ul class="right chevron">
-                    <li><a href="{{ path('index') }}">Accueil</a></li>
+                <ul class="nav justify-content-end" style="color: #FFFFFF">
+                    <li><a href="{{ path('index') }}" class="nav-link active">Accueil</a></li>
                     {% if app.user == null %}
                     <li><a href="{{ path('app_login') }}">Connexion</a>
                     <li><a href="{{ path('inscription') }}">Inscription</a>
@@ -55,8 +57,13 @@
                     <!-- si l'utilisateur existe -->
                     {% if app.user %}
 
-                        <li><a>{{ app.user.getNom() }}, {{ app.user.getPrenom() }}</a></li>
+                        <li style="margin-top: 2em">{{ app.user.getNom() }}, {{ app.user.getPrenom() }}</li>
 
+                    {% endif %}
+                    {% if app.user %}
+                        {% if nbrItems > 0 %}
+                            <li><a href="{{ path('panier') }}">Panier : {{ nbrItems }} Total {{ total }}€</a></li>
+                        {% endif %}
                     {% endif %}
                 </ul>
             </div>
@@ -82,11 +89,9 @@
     margin-top: 2em;">
         <div class="background-dark padding text-center footer-social">
 
-            <a href="https://github.com/Kagarie" target="_blank"><i class="icon-sli-social-github text-size-30"></i>
-                <span
-                        class="text-strong text-white hide-s hide-m">Github</span></a></a>
+            <a href="https://github.com/Kagarie" target="_blank"><i class="icon-sli-social-github text-size-30"></i></a>
             <a href="https://www.univ-larochelle.fr" target="_blank"></i> <span
-                        class="text-strong text-white hide-s hide-m">Fac de la rochelle</span></a></a>
+                        class="text-strong text-white hide-s hide-m">Fac de la rochelle</span></a>
 
         </div>
 

@@ -44,21 +44,34 @@ class Album
      */
     private $musiques;
 
+    /**
+     * Album constructor.
+     */
     public function __construct()
     {
         $this->musiques = new ArrayCollection();
     }
 
+    /**
+     * @return int|null
+     */
     public function getId(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * @return string|null
+     */
     public function getTitre(): ?string
     {
         return $this->titre;
     }
 
+    /**
+     * @param string $titre
+     * @return $this
+     */
     public function setTitre(string $titre): self
     {
         $this->titre = $titre;
@@ -66,11 +79,18 @@ class Album
         return $this;
     }
 
+    /**
+     * @return float|null
+     */
     public function getPrix(): ?float
     {
         return $this->prix;
     }
 
+    /**
+     * @param float $prix
+     * @return $this
+     */
     public function setPrix(float $prix): self
     {
         $this->prix = $prix;
@@ -78,11 +98,18 @@ class Album
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getCheminImage(): ?string
     {
         return $this->cheminImage;
     }
 
+    /**
+     * @param string|null $cheminImage
+     * @return $this
+     */
     public function setCheminImage(?string $cheminImage): self
     {
         $this->cheminImage = $cheminImage;
@@ -90,17 +117,28 @@ class Album
         return $this;
     }
 
+    /**
+     * @return Groupe|null
+     */
     public function getGroupe(): ?Groupe
     {
         return $this->groupe;
     }
 
+    /**
+     * @param Groupe|null $groupe
+     * @return $this
+     */
     public function setGroupe(?Groupe $groupe): self
     {
         $this->groupe = $groupe;
 
         return $this;
     }
+
+    /**
+     * @return string|null
+     */
     public function __toString()
     {
         // TODO: Implement __toString() method.
@@ -115,6 +153,10 @@ class Album
         return $this->musiques;
     }
 
+    /**
+     * @param Musique $musique
+     * @return $this
+     */
     public function addMusique(Musique $musique): self
     {
         if (!$this->musiques->contains($musique)) {
@@ -125,6 +167,10 @@ class Album
         return $this;
     }
 
+    /**
+     * @param Musique $musique
+     * @return $this
+     */
     public function removeMusique(Musique $musique): self
     {
         if ($this->musiques->removeElement($musique)) {
