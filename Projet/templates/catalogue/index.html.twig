@@ -30,7 +30,8 @@
                 {% endfor %}
                 <p> Prix de l'album : {{ album.prix/100 }}€</p>
                 {% if is_granted('ROLE_USER') %}
-                    <a href="{{ path('panier_add', {'id': album.id}) }}" class="btn btn-success float-right" style="margin-bottom: 1em;"><i
+                    <a href="{{ path('panier_add', {'id': album.id}) }}" class="btn btn-success float-right"
+                       style="margin-bottom: 1em;"><i
                                 class="fas fa-shopping-cart mr-1" style="color: #FFFFFF;">Ajouter</i></a>
                 {% endif %}
             </div>
