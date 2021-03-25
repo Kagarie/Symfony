@@ -12,15 +12,16 @@
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.</p>
         </div>
     </header>
-    <section style="text-align: center">
+    <section style="text-align: center;">
         {% for g in groupes %}
-            <div style="width: 19%; display: inline-block; text-align: center; border: 1px solid;margin-top: 2em;">
-                <a href="{{ path('groupe', {groupe :g}) }}">
+            <div style="width: 19%; display: inline-block; text-align: center; border: 1px solid;margin: 1em">
+                <a href="{{ path('groupe', {'groupeId' :g.id}) }}">
                     <h2>{{ g.nom }}</h2>
                     <p>Nombre de membres : {{ g.nombreMembre }}</p>
                     <p>Genre : {{ g.genre }}</p>
                     {% if g.cheminLogo is defined %}
-                        <img src="images/groupe_logo/{{ g.cheminLogo }}" style="height: 150px;width: 200px; margin: 0 auto 7px"></td>
+                        <img src="images/groupe_logo/{{ g.cheminLogo }}"
+                             style="width: 80%;height: 150px; margin: auto; margin-bottom: 1em;">
                     {% endif %}
                 </a>
             </div>

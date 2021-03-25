@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : mar. 16 mars 2021 à 21:53
+-- Généré le : jeu. 25 mars 2021 à 12:57
 -- Version du serveur :  10.5.9-MariaDB
--- Version de PHP : 8.0.2
+-- Version de PHP : 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -106,24 +106,24 @@ CREATE TABLE `musique` (
 --
 
 INSERT INTO `musique` (`id`, `album_id`, `chemin_musique`, `titre`) VALUES
-(1, 1, 'ACDC-Back-in-black.mp3', 'Back In Black'),
-(2, 2, 'ACDC-T.N.T.mp3', 'T.N.T'),
-(3, 3, 'Beatles-And-I-Love-Her.mp3', 'And I Love Her'),
-(4, 4, 'Beatles-Twist-And-Shout.mp3', 'Twist And Shout'),
-(5, 5, 'Dire-Straits-Brothers-In-Arms.mp3', 'Brothers In Arms'),
-(6, 6, 'Dire-Straits-Love-Over-Gold.mp3', 'Love Over Gold'),
+(1, 2, 'ACDC-Back-in-black.mp3', 'Back In Black'),
+(2, 1, 'ACDC-T.N.T.mp3', 'T.N.T'),
+(3, 12, 'Beatles-And-I-Love-Her.mp3', 'And I Love Her'),
+(4, 11, 'Beatles-Twist-And-Shout.mp3', 'Twist And Shout'),
+(5, 18, 'Dire-Straits-Brothers-In-Arms.mp3', 'Brothers In Arms'),
+(6, 17, 'Dire-Straits-Love-Over-Gold.mp3', 'Love Over Gold'),
 (7, 7, 'Indochine-aventurier.mp3', 'L\'Aventurier'),
 (8, 8, 'Indochine-Le-baiser.mp3', 'Le Baiser'),
-(9, 9, 'Iron-maiden-fear-of-the-dark.mp3', 'Fear Of The Dark'),
-(10, 10, 'Iron-Maiden-Killer.mp3', 'Killers'),
-(11, 11, 'Kiss-Almost-Human.mp3', 'Almost Human'),
-(12, 12, 'Kiss-Destroyer-Sweet-Pain.mp3', 'Sweet Pain'),
-(13, 13, 'KORN-Lost.mp3', 'Lost'),
-(14, 14, 'KORN-Trash.mp3', 'Trash'),
-(15, 15, 'Nirvana-Blew.mp3', 'Blew'),
-(16, 16, 'Nirvana-Come-As-You-Are.mp3', 'Come As You Are'),
-(17, 17, 'Queen-Killer-Queen.mp3', 'Killer Queen'),
-(18, 18, 'Queen-Sweet-Lady.mp3', 'Sweet Lady');
+(9, 16, 'Iron-maiden-fear-of-the-dark.mp3', 'Fear Of The Dark'),
+(10, 15, 'Iron-Maiden-Killer.mp3', 'Killers'),
+(11, 14, 'Kiss-Almost-Human.mp3', 'Almost Human'),
+(12, 13, 'Kiss-Destroyer-Sweet-Pain.mp3', 'Sweet Pain'),
+(13, 5, 'KORN-Lost.mp3', 'Lost'),
+(14, 6, 'KORN-Trash.mp3', 'Trash'),
+(15, 3, 'Nirvana-Blew.mp3', 'Blew'),
+(16, 4, 'Nirvana-Come-As-You-Are.mp3', 'Come As You Are'),
+(17, 10, 'Queen-Killer-Queen.mp3', 'Killer Queen'),
+(18, 9, 'Queen-Sweet-Lady.mp3', 'Sweet Lady');
 
 -- --------------------------------------------------------
 

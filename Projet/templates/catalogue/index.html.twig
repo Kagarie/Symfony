@@ -1,22 +1,40 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Catalogue{% endblock %}
+{% block title %}Groupe{% endblock %}
 
 {% block body %}
-    <h1 style="margin: 0 auto; text-align: center; margin-bottom: 2em;">Listes des groupes </h1>
-    <section>
-        {% for g in groupes %}
-            <div style="width: 20%; display: inline-block; text-align: center; border: 1px solid; margin-left: 5px ">
-                <a href="{{ path('groupe', {g: g.id}) }}">
-                    <h2>{{ g.nom }}</h2>
-                    <p>Nombre de membres : {{ g.nombreMembre }}</p>
-                    <p>Genre : {{ g.genre }}</p>
-                    r {% if g.cheminLogo is defined %}
-                        <img src="images/groupe_logo/{{ g.cheminLogo }}"
-                             style="height: 150px;width: 200px; margin: 0 auto 7px"></td>
-                    {% endif %}
-                </a>
+
+    <section style="text-align: center">
+        <div style="width: 20%; display: inline-block; text-align: center; ">
+            <h2>{{ groupe.nom }}</h2>
+            <p>Nombre de membres : {{ groupe.nombreMembre }}</p>
+            <p>Genre : {{ groupe.genre }}</p>
+            {% if groupe.cheminLogo is defined %}
+                <img src="/images/groupe_logo/{{ groupe.cheminLogo }}" alt="logo groupe {{ groupe.nom }} "
+                     style="height: 150px;width: 200px; margin: 0 auto 7px">
+            {% endif %}
+            </a>
+        </div>
+    </section>
+
+    <section style="text-align: center">
+        {% for album in groupe.albums %}
+            <div style="width: 19%; display: inline-block; text-align: center; border: 1px solid;margin-top: 2em;">
+                <h3>{{ album.titre }}</h3>
+                <img src="/images/album/{{ album.cheminImage }}" style=" width: 80%; margin: 0 auto ">
+                {% for musique in album.musiques %}
+                    <p>{{ musique.titre }}</p>
+                    <audio controls style="width: 80%">
+                        <source src="/musiques/{{ musique.cheminMusique }}" type="audio/mp3">
+                    </audio>
+                {% endfor %}
+                <p> Prix de l'album : {{ album.prix/100 }}€</p>
+                {% if is_granted('ROLE_USER') %}
+                    <a href="{{ path('panier_add', {'id': album.id}) }}" class="btn btn-success float-right" style="margin-bottom: 1em;"><i
+                                class="fas fa-shopping-cart mr-1" style="color: #FFFFFF;">Ajouter</i></a>
+                {% endif %}
             </div>
         {% endfor %}
     </section>
+
 {% endblock %}
