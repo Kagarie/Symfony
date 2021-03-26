@@ -33,8 +33,8 @@ class PanierService
     /**
      * @param int $id
      * @return int
+     * on ajoute un un album et on retourne l'id du groupe de l'album
      */
-    //on ajoute un un album et on retourne l'id du groupe de l'album
     public function add(int $id): int
     {
         $panier = $this->session->get('panier', []);
@@ -51,8 +51,8 @@ class PanierService
 
     /**
      * @param int $id
+     * On supprime un album du panier
      */
-    // On supprime un album du panier
     public function remove(int $id)
     {
         $panier = $this->session->get('panier', []);
@@ -65,8 +65,8 @@ class PanierService
 
     /**
      * @return array
+     * On retourne tout le panier
      */
-    // On retourne tout le panier
     public function getFullPanier(): array
     {
         $panier = $this->session->get('panier', []);
@@ -84,8 +84,8 @@ class PanierService
 
     /**
      * @return float
+     * On calcul le total du panier
      */
-    // On calcul le total du panier
     public function getTotal(): float
     {
         $total = 0;
@@ -96,8 +96,8 @@ class PanierService
 
     /**
      * @return int
+     * Le nombre de quantité présent dans notre panier
      */
-    //Le nombre de quantité présent dans notre panier
     public function getNbrAlbum(): int
     {
         $nbr = 0;
