@@ -1,15 +1,12 @@
 # Projet Symfony S4 
 
-- Faire le catalogue (traitement de la musique)
-- Faire le panier
-
 ---
 
 ## Installation
 
-Une fois le projet clone il ne vous reste plus qu'a installer les composants.
-
 ```
+git clone https://github.com/Kagarie/Symfony.git
+cd Symfony
 composer install
 ```
 
