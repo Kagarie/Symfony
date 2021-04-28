@@ -12,13 +12,14 @@ function cut40
 cd ../public/musiques/
 while true
 do
-	#On parcourt les elements du dossier un par un
+	#On parcourt les .mp3 un par un
 	for fich in *.mp3
 	do
-	
-		if [ -f $fich -a $(stat -c%s "$fich") -gt 600000 ]
+		#Si la musique a un poids superieur à 700 000 octets
+		#alors elle fait plus de 40 secondes dans un format mp3
+		if [ -f $fich -a $(stat -c%s "$fich") -gt 700000 ]
 		then
-				cut40 "$fich"	
+				cut40 "$fich"
 		fi
 	done
 	sleep 30
