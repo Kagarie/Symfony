@@ -1,6 +1,9 @@
 {% extends 'base.html.twig' %}
 {% block title %}Login{% endblock %}
 {% block body %}
+    <header class="section background-white">
+
+    </header>
     <form method="post">
         {% if error %}
             <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
