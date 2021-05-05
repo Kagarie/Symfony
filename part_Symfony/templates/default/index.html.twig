@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+    <header class="section background-white">
+        <div class="line text-center">
+            <h1 class="alert">
+                Buy-And-Listen</h1>
+            <p class="margin-bottom-0 text-size-16 text-dark">Duis autem vel eum iriure dolor in hendrerit in vulputate
+                velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.<br>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.</p>
+        </div>
+    </header>
+    <section style="text-align: center;">
+        {% for g in groupes %}
+            <div style="width: 19%; display: inline-block; text-align: center; border: 1px solid;margin: 1em">
+                <a href="{{ path('groupe', {'groupeId' :g.id}) }}">
+                    <h2>{{ g.nom }}</h2>
+                    <p>Nombre de membres : {{ g.nombreMembre }}</p>
+                    <p>Genre : {{ g.genre }}</p>
+                    {% if g.cheminLogo is defined %}
+                        <img src="images/groupe_logo/{{ g.cheminLogo }}"
+                             style="width: 80%;height: 150px; margin: auto; margin-bottom: 1em;">
+                    {% endif %}
+                </a>
+            </div>
+        {% endfor %}
+    </section>
+
+{% endblock %}
