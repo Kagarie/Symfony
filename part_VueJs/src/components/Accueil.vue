@@ -22,11 +22,12 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Accueil',
   props: {
     msg: String
   },
-  computed: {}, methods: {
+  computed: {},
+  methods: {
     path(str) {
       return "images/groupe_logo/" + str;
     }
@@ -51,7 +52,8 @@ li {
 }
 
 a {
-  color: #42b983;
+  text-decoration: none;
+  color: black;
 }
 
 img {
