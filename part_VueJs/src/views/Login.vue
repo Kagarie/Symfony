@@ -1,5 +1,6 @@
 <template>
-  <div class="Connexion">
+  <div>
+    <p>coucuou</p>
     <Connexion/>
     <Footer/>
   </div>
@@ -10,11 +11,11 @@
 import Connexion from '@/components/Connexion'
 import Footer from '@/components/Footer'
 
+
 export default {
-  name: 'Login',
   components: {
     Connexion,
-    Footer
+    Footer,
   }
 }
 </script>

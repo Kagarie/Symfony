@@ -2,8 +2,6 @@
   <div>
     <footer>
       <div class="background-dark padding text-center footer-social">
-
-        <a href="https://github.com/Kagarie" target="_blank"><i class="icon-sli-social-github text-size-30"></i></a>
         <a href="https://github.com/Kagarie" target="_blank"><img
             src="https://pluspng.com/img-png/github-logo-png-white-github-11-icon-free-white-social-icons-256x256.png"
             alt="Github"></a>
@@ -35,7 +33,7 @@ export default {
 </script>
 
 <style scoped>
-footer {;
+footer {
   position: absolute;
   width: 100%;
   height: 110px;

@@ -9,23 +9,22 @@
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.</p>
       </div>
     </header>
-    <div v-for="c in this.$store.state.groupes" :key="c"
-         style="width: 19%; display: inline-block; text-align: center; border: 1px solid; margin: 1em">
-      <a href="#" :alt="c.nom">
-        <h2>{{ c.nom }}</h2>
-        <p>Nombre de membres : {{ c.nombre_membre }}</p>
-        <img :src="path(c.chemin_logo)" alt="img">
-      </a>
-    </div>
+    <section style="text-align: center;">
+      <div v-for="c in this.$store.state.groupes" :key="c"
+           style="width: 19%; display: inline-block; text-align: center; border: 1px solid; margin: 1em">
+        <a href="#" :alt="c.nom">
+          <h2>{{ c.nom }}</h2>
+          <p>Nombre de membres : {{ c.nombre_membre }}</p>
+          <img :src="path(c.chemin_logo)" alt="img">
+        </a>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Accueil',
-  props: {
-    msg: String
-  },
   computed: {},
   methods: {
     path(str) {

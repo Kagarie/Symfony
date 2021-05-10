@@ -1,7 +1,5 @@
-<template>
-  <div>
-    <p>coucou</p>
-  </div>
+<template style="text-align: center;">
+ <h1>etestestestes</h1>
 </template>
 
 
@@ -9,6 +7,7 @@
 
 export default {
   name: 'Connexion',
+  computed: {},
 
 }
 </script>
