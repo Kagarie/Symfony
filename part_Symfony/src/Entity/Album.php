@@ -45,6 +45,11 @@ class Album
     private $musiques;
 
     /**
+     * @ORM\Column(type="date", nullable=true)
+     */
+    private $date;
+
+    /**
      * Album constructor.
      */
     public function __construct()
@@ -118,6 +123,25 @@ class Album
     }
 
     /**
+     * @return \DateTimeInterface|null
+     */
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    /**
+     * @param \DateTimeInterface|null $date
+     * @return $this
+     */
+    public function setDate(?\DateTimeInterface $date): self
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
      * @return Groupe|null
      */
     public function getGroupe(): ?Groupe
@@ -182,5 +206,7 @@ class Album
 
         return $this;
     }
+
+
 
 }

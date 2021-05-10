@@ -11,7 +11,7 @@ import Connexion from '@/components/Connexion'
 import Footer from '@/components/Footer'
 
 export default {
-  name: 'Connexion',
+  name: 'Login',
   components: {
     Connexion,
     Footer

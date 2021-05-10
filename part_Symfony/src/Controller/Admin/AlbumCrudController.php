@@ -3,13 +3,12 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Album;
-use App\Entity\Groupe;
+
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class AlbumCrudController extends AbstractCrudController
@@ -31,6 +30,7 @@ class AlbumCrudController extends AbstractCrudController
                 ->setUploadedFileNamePattern("[name] . [extension]")
                 ->setRequired(false),
             AssociationField::new('groupe'),
+          DateField::new('date')
 
         ];
     }

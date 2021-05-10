@@ -21,6 +21,11 @@
         {% for album in groupe.albums %}
             <div style="width: 19%; display: inline-block; text-align: center; border: 1px solid;margin-top: 2em;">
                 <h3>{{ album.titre }}</h3>
+                {% if album.date|date("m/d/Y") > "now"|date("m/d/Y") %}
+                    <p>date de sortie : {{ album.date|date('M-Y') }} </p>
+                {% else %}
+                    <p>date de sortie : NC</p>
+                {% endif %}
                 <img src="/images/album/{{ album.cheminImage }}" style=" width: 80%; margin: 0 auto ">
                 {% for musique in album.musiques %}
                     <p>{{ musique.titre }}</p>
