@@ -276,30 +276,7 @@ export default new Vuex.Store({
             }
         ]
     },
-    getters: {
-        getGroupe(state) {
-            return state.groupes;
-        }
-        ,
-        getAlbum(state) {
-            let albumes = new Array();
-            for (const [key, value] of state.data) {
-                if (key.name == "album")
-                    albumes.add(value)
-            }
-            return albumes;
-        }
-        ,
-        getMusique(state) {
-            let musiques = new Array();
-            for (const [key, value] of state.data) {
-                if (key == "musique") {
-                    musiques.add(value)
-                }
-            }
-            return musiques;
-        }
-    }
+    getters: {}
     ,
     mutations: {}
     ,

@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../views/Login'
 import Inscription from '../views/Inscription'
+import Catalogue from '../views/Catalogues'
 
 Vue.use(VueRouter)
 
@@ -22,6 +23,11 @@ const routes = [
         path: '/Inscription',
         name: 'Inscription',
         component: Inscription
+    },
+    {
+        path: '/Catalogue',
+        name: 'Catalogue',
+        component: Catalogue
     }
 ]
 

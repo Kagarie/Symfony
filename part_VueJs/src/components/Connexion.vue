@@ -1,5 +1,7 @@
 <template style="text-align: center;">
- <h1>etestestestes</h1>
+  <div>
+    <h1>etestestestes</h1>
+  </div>
 </template>
 
 
