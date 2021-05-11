@@ -9,10 +9,9 @@
         <div class="navbar-nav">
           <router-link class="nav-item nav-link" to="/">Accueil</router-link>
 
-          <router-link class="nav-item nav-link" to="Connexion">Connexion</router-link>
-
-          <router-link class="nav-item nav-link" to="Inscription">Inscription</router-link>
           <router-link class="nav-item nav-link" to="Catalogue">Catalogue</router-link>
+
+          <router-link class="nav-item nav-link" to="Panier">Panier</router-link>
 
         </div>
       </div>
@@ -21,6 +20,9 @@
   </div>
 </template>
 
+<script>
+
+</script>
 <style scoped>
 #nav {
   background: #212529;

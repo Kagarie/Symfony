@@ -10,12 +10,12 @@
       </div>
     </header>
     <section style="text-align: center;">
-      <div v-for="c in this.$store.state.groupes" :key="c"
+      <div v-for="(g,index) in groupes" :key="index"
            style="width: 19%; display: inline-block; text-align: center; border: 1px solid; margin: 1em">
-        <a href="#" :alt="c.nom">
-          <h2>{{ c.nom }}</h2>
-          <p>Nombre de membres : {{ c.nombre_membre }}</p>
-          <img :src="path(c.chemin_logo)" alt="img">
+        <a href="#" :alt="g.nom">
+          <h2>{{ g.nom }}</h2>
+          <p>Nombre de membres : {{ g.nombre_membre }}</p>
+          <img :src="path(g.chemin_logo)" alt="img">
         </a>
       </div>
     </section>
@@ -25,7 +25,18 @@
 <script>
 export default {
   name: 'Accueil',
-  computed: {},
+  computed: {
+    //fonction pour retourner tous les groupes de mon store
+    groupes() {
+      let groupes = new Array();
+      this.$store.state.data.forEach((key) => {
+        if (key.name == "groupe") {
+          groupes.push(key.data);
+        }
+      })
+      return groupes[0];
+    }
+  },
   methods: {
     path(str) {
       return "images/groupe_logo/" + str;

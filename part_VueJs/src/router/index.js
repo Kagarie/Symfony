@@ -2,9 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import Home from '../views/Home.vue'
-import Login from '../views/Login'
-import Inscription from '../views/Inscription'
-import Catalogue from '../views/Catalogues'
+import Catalogue from "@/components/catalogue";
+import Panier from "@/components/Panier";
 
 Vue.use(VueRouter)
 
@@ -15,20 +14,15 @@ const routes = [
         component: Home
     },
     {
-        path: '/Login',
-        name: 'Login',
-        component: Login
-    },
-    {
-        path: '/Inscription',
-        name: 'Inscription',
-        component: Inscription
-    },
-    {
-        path: '/Catalogue',
-        name: 'Catalogue',
-        component: Catalogue
+        path: "/catalogue",
+        name: 'catalogue',
+        component: Catalogue,
+    }, {
+        path: '/panier',
+        name:' panier',
+        component: Panier,
     }
+
 ]
 
 const router = new VueRouter({
