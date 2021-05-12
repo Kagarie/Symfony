@@ -51,13 +51,6 @@ export default {
   computed: {
     albums() {
       return this.$store.getters.albums;
-      /*let albums = new Array();
-      this.$store.state.data.forEach((key) => {
-        if (key.name == "album") {
-          albums.push(key.data);
-        }
-      })
-      return albums[0];*/
     },
     panier() {
       return this.$store.state.panier;
