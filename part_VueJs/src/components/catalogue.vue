@@ -50,7 +50,7 @@ export default {
   },
   computed: {
     albums() {
-      return this.$store.getters.albums;
+      return this.$store.getters.getAlbums[0];
     },
     panier() {
       return this.$store.state.panier;
@@ -58,16 +58,16 @@ export default {
     quantite() {
       return this.$store.state.quantite;
     },
-    totalPanier(){
+    totalPanier() {
       return this.$store.getters.totalPanier;
     },
-    nbrElePanier(){
+    nbrElePanier() {
       return this.$store.getters.nbrElePanier;
     }
   },
   methods: {
     add(album) {
-      this.$store.commit('add',album)
+      this.$store.commit('add', album)
     },
     pathImg(str) {
       return "images/album/" + str;

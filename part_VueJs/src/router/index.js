@@ -2,8 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import Home from '../views/Home.vue'
-import Catalogue from "@/components/catalogue";
+import Catalogue from "@/components/catalogue"
 import Panier from "@/components/Panier";
+
 
 Vue.use(VueRouter)
 
@@ -19,9 +20,9 @@ const routes = [
         component: Catalogue,
     }, {
         path: '/panier',
-        name:' panier',
+        name: 'panier',
         component: Panier,
-    }
+    },
 
 ]
 
