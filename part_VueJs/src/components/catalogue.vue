@@ -50,24 +50,18 @@ export default {
   },
   computed: {
     albums() {
-      return this.$store.getters.getAlbums[0];
-    },
-    panier() {
-      return this.$store.state.panier;
-    },
-    quantite() {
-      return this.$store.state.quantite;
+      return this.$store.getters["album/getAlbums"][0]
     },
     totalPanier() {
-      return this.$store.getters.totalPanier;
+      return this.$store.getters["panier/totalPanier"]
     },
     nbrElePanier() {
-      return this.$store.getters.nbrElePanier;
+      return this.$store.getters["panier/nbrElePanier"]
     }
   },
   methods: {
     add(album) {
-      this.$store.commit('add', album)
+      this.$store.commit("panier/add", album)
     },
     pathImg(str) {
       return "images/album/" + str;

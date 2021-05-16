@@ -28,7 +28,7 @@ export default {
   computed: {
     //fonction pour retourner tous les groupes de mon store
     groupes() {
-      return this.$store.getters.getGroupe[0];
+      return this.$store.getters["groupe/getGroupe"][0]
     }
   },
   methods: {
