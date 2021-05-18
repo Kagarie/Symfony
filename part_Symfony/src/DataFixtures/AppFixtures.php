@@ -74,6 +74,7 @@ class AppFixtures extends Fixture
             $album->setPrix($prix[$i]);
             $album->setCheminImage($imageAlbum[$i]);
             $album->setGroupe($tabGroupe[$j]);
+            $album->setDate(null);
             $tabAlbum[] = $album;
             $manager->persist($album);
             $i += 1;

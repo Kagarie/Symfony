@@ -4,20 +4,17 @@
       <div class="line text-center">
         <h1 class="alert">
           Buy-And-Listen</h1>
-        <p class="margin-bottom-0 text-size-16 text-dark">Duis autem vel eum iriure dolor in hendrerit in vulputate
-          velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.<br>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.</p>
+        <p class="margin-bottom-0 text-size-16 text-dark">Ce site est un projet pour ma fac. Il comprend une partie php avec le framework Symfony et une partie js avec Vue Js<br>
+          Le thème choisi est l'achat de musique</p>
       </div>
     </header>
     <section style="text-align: center;">
       <div v-if="chargerApi">
         <div v-for="(g,index) in groupes" :key="index"
              style="width: 19%; display: inline-block; text-align: center; border: 1px solid; margin: 1em">
-          <a href="#" :alt="g.nom">
             <h2>{{ g.nom }}</h2>
             <p>Nombre de membres : {{ g.nombre_membre }}</p>
             <img :src="path(g.chemin_logo)" alt="img">
-          </a>
         </div>
       </div>
       <div v-else>

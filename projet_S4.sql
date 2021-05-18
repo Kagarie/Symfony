@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : jeu. 25 mars 2021 à 12:57
+-- Généré le : mar. 18 mai 2021 à 17:18
 -- Version du serveur :  10.5.9-MariaDB
--- Version de PHP : 8.0.3
+-- Version de PHP : 8.0.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,32 +32,54 @@ CREATE TABLE `album` (
   `groupe_id` int(11) DEFAULT NULL,
   `titre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `prix` double NOT NULL,
-  `chemin_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `chemin_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `album`
 --
 
-INSERT INTO `album` (`id`, `groupe_id`, `titre`, `prix`, `chemin_image`) VALUES
-(1, 1, 'T.N.T', 700, 'tnt.jpg'),
-(2, 1, 'Back in Black', 700, 'ACDC-BackInBlack-Front.jpg'),
-(3, 2, 'Bleach', 1400, 'bleach.jpg'),
-(4, 2, 'Nervermind', 1500, 'copertina-nevermind-nirvana.webp'),
-(5, 3, 'Life Is Peachy', 900, 'Life Is Peachy.jpg'),
-(6, 3, 'Issues', 1600, 'korn_issues.jpg'),
-(7, 4, 'L Aventurier', 600, 'aventurier.jpg'),
-(8, 4, 'Le Baiser', 1600, 'le baiser.jpg'),
-(9, 5, 'A Night at the Opera', 800, 'A_Night_at_the_Opera.jpg'),
-(10, 5, 'Sheer Heart Attack', 1100, 'Sheer Heart Attack.jpg'),
-(11, 6, 'Twist and Shout', 1700, 'Twist_and_Shout.jpg'),
-(12, 6, 'Something New', 1600, 'Something_New.jpg'),
-(13, 7, 'Destroyer', 900, 'destroyer.jpg'),
-(14, 7, 'Love Gun', 1400, 'love gun.jpg'),
-(15, 8, 'Killers', 600, 'Iron-Maiden-Killers.jpg'),
-(16, 8, 'Fear of the Dark', 1200, 'album_iron_maiden_fear_of_the_dark.jpg'),
-(17, 9, 'Love over Gold', 1200, 'Love over Gold.jpg'),
-(18, 9, 'Brothers in Arms', 1600, 'BrothersDireStraits.png');
+INSERT INTO `album` (`id`, `groupe_id`, `titre`, `prix`, `chemin_image`, `date`) VALUES
+(1, 1, 'T.N.T', 700, 'tnt.jpg', '1975-12-01'),
+(2, 1, 'Back in Black', 700, 'ACDC-BackInBlack-Front.jpg', NULL),
+(3, 2, 'Bleach', 1400, 'bleach.jpg', NULL),
+(4, 2, 'Nervermind', 1500, 'copertina-nevermind-nirvana.webp', NULL),
+(5, 3, 'Life Is Peachy', 900, 'Life Is Peachy.jpg', NULL),
+(6, 3, 'Issues', 1600, 'korn_issues.jpg', NULL),
+(7, 4, 'L Aventurier', 600, 'aventurier.jpg', NULL),
+(8, 4, 'Le Baiser', 1600, 'le baiser.jpg', NULL),
+(9, 5, 'A Night at the Opera', 800, 'A_Night_at_the_Opera.jpg', NULL),
+(10, 5, 'Sheer Heart Attack', 1100, 'Sheer Heart Attack.jpg', NULL),
+(11, 6, 'Twist and Shout', 1700, 'Twist_and_Shout.jpg', NULL),
+(12, 6, 'Something New', 1600, 'Something_New.jpg', NULL),
+(13, 7, 'Destroyer', 900, 'destroyer.jpg', NULL),
+(14, 7, 'Love Gun', 1400, 'love gun.jpg', NULL),
+(15, 8, 'Killers', 600, 'Iron-Maiden-Killers.jpg', NULL),
+(16, 8, 'Fear of the Dark', 1200, 'album_iron_maiden_fear_of_the_dark.jpg', NULL),
+(17, 9, 'Love over Gold', 1200, 'Love over Gold.jpg', NULL),
+(18, 9, 'Brothers in Arms', 1600, 'BrothersDireStraits.png', NULL),
+(19, 10, 'Tribute', 690, 'Tenacious D - Tribute . jpg', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `doctrine_migration_versions`
+--
+
+CREATE TABLE `doctrine_migration_versions` (
+  `version` varchar(191) COLLATE utf8_unicode_ci NOT NULL,
+  `executed_at` datetime DEFAULT NULL,
+  `execution_time` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Déchargement des données de la table `doctrine_migration_versions`
+--
+
+INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_time`) VALUES
+('DoctrineMigrations\\Version20210510121801', '2021-05-10 14:18:12', 82),
+('DoctrineMigrations\\Version20210510124752', '2021-05-10 14:47:59', 32);
 
 -- --------------------------------------------------------
 
@@ -86,7 +108,8 @@ INSERT INTO `groupe` (`id`, `nom`, `nombre_membre`, `chemin_logo`, `genre`) VALU
 (6, 'The Beatles', 4, 'the_beatles_vector_logo_by_dutchlion-d5ovg0i.jpg', 'Rock'),
 (7, 'Kiss', 4, 'iphone4-Kiss-Logo.jpg', 'Glam Rock'),
 (8, 'Iron Maiden', 6, 'iron-maiden-logo.jpg', 'Heavy Metal'),
-(9, 'Dire Straits', 4, 'abab3424128727a422de1c22d4a19227.jpg', 'Blues Rock');
+(9, 'Dire Straits', 4, 'abab3424128727a422de1c22d4a19227.jpg', 'Blues Rock'),
+(10, 'Tenacoius D', 2, 'Tenacious_D_title_sequence . png', 'Comedy rock');
 
 -- --------------------------------------------------------
 
@@ -123,7 +146,8 @@ INSERT INTO `musique` (`id`, `album_id`, `chemin_musique`, `titre`) VALUES
 (15, 3, 'Nirvana-Blew.mp3', 'Blew'),
 (16, 4, 'Nirvana-Come-As-You-Are.mp3', 'Come As You Are'),
 (17, 10, 'Queen-Killer-Queen.mp3', 'Killer Queen'),
-(18, 9, 'Queen-Sweet-Lady.mp3', 'Sweet Lady');
+(18, 9, 'Queen-Sweet-Lady.mp3', 'Sweet Lady'),
+(19, 19, 'Tenacious D- Tribute . mp3', 'Tribute');
 
 -- --------------------------------------------------------
 
@@ -161,6 +185,12 @@ ALTER TABLE `album`
   ADD KEY `IDX_39986E437A45358C` (`groupe_id`);
 
 --
+-- Index pour la table `doctrine_migration_versions`
+--
+ALTER TABLE `doctrine_migration_versions`
+  ADD PRIMARY KEY (`version`);
+
+--
 -- Index pour la table `groupe`
 --
 ALTER TABLE `groupe`
@@ -188,19 +218,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `album`
 --
 ALTER TABLE `album`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT pour la table `groupe`
 --
 ALTER TABLE `groupe`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT pour la table `musique`
 --
 ALTER TABLE `musique`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT pour la table `user`
