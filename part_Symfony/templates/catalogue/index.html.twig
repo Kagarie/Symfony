@@ -38,6 +38,9 @@
                     <a href="{{ path('panier_add', {'id': album.id}) }}" class="btn btn-success float-right"
                        style="margin-bottom: 1em;"><i
                                 class="fas fa-shopping-cart mr-1" style="color: #FFFFFF;">Ajouter</i></a>
+                    {% else %}
+                    <p>Pour acheter, il fuat que vous soyer connecté</p>
+                        <a href="{{ path('app_login') }} " class="btn btn-danger" style="color: #FFFFFF ; margin-bottom: 1em;">Connexion</a>
                 {% endif %}
             </div>
         {% endfor %}
