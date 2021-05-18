@@ -9,7 +9,7 @@ function cut40
 	mv $timestamp.mp3 $1
 }
 
-cd ../public/musiques/
+cd public/musiques/
 while true
 do
 	#On parcourt les .mp3 un par un
