@@ -3,7 +3,7 @@
     "type": "table",
     "name": "album",
     "database": "projet_S4",
-    "albums": [
+    "album": [
       {
         "id": "1",
         "groupe_id": "1",
@@ -162,7 +162,7 @@
     "type": "table",
     "name": "groupe",
     "database": "projet_S4",
-    "groupes": [
+    "groupe": [
       {
         "id": "1",
         "nom": "ACDC",
@@ -234,127 +234,5 @@
         "genre": "Comedy rock"
       }
     ]
-  },
-  {
-    "type": "table",
-    "name": "musique",
-    "database": "projet_S4",
-    "musiques": [
-      {
-        "id": "1",
-        "album_id": "2",
-        "chemin_musique": "ACDC-Back-in-black.mp3",
-        "titre": "Back In Black"
-      },
-      {
-        "id": "2",
-        "album_id": "1",
-        "chemin_musique": "ACDC-T.N.T.mp3",
-        "titre": "T.N.T"
-      },
-      {
-        "id": "3",
-        "album_id": "12",
-        "chemin_musique": "Beatles-And-I-Love-Her.mp3",
-        "titre": "And I Love Her"
-      },
-      {
-        "id": "4",
-        "album_id": "11",
-        "chemin_musique": "Beatles-Twist-And-Shout.mp3",
-        "titre": "Twist And Shout"
-      },
-      {
-        "id": "5",
-        "album_id": "18",
-        "chemin_musique": "Dire-Straits-Brothers-In-Arms.mp3",
-        "titre": "Brothers In Arms"
-      },
-      {
-        "id": "6",
-        "album_id": "17",
-        "chemin_musique": "Dire-Straits-Love-Over-Gold.mp3",
-        "titre": "Love Over Gold"
-      },
-      {
-        "id": "7",
-        "album_id": "7",
-        "chemin_musique": "Indochine-aventurier.mp3",
-        "titre": "L'Aventurier"
-      },
-      {
-        "id": "8",
-        "album_id": "8",
-        "chemin_musique": "Indochine-Le-baiser.mp3",
-        "titre": "Le Baiser"
-      },
-      {
-        "id": "9",
-        "album_id": "16",
-        "chemin_musique": "Iron-maiden-fear-of-the-dark.mp3",
-        "titre": "Fear Of The Dark"
-      },
-      {
-        "id": "10",
-        "album_id": "15",
-        "chemin_musique": "Iron-Maiden-Killer.mp3",
-        "titre": "Killers"
-      },
-      {
-        "id": "11",
-        "album_id": "14",
-        "chemin_musique": "Kiss-Almost-Human.mp3",
-        "titre": "Almost Human"
-      },
-      {
-        "id": "12",
-        "album_id": "13",
-        "chemin_musique": "Kiss-Destroyer-Sweet-Pain.mp3",
-        "titre": "Sweet Pain"
-      },
-      {
-        "id": "13",
-        "album_id": "5",
-        "chemin_musique": "KORN-Lost.mp3",
-        "titre": "Lost"
-      },
-      {
-        "id": "14",
-        "album_id": "6",
-        "chemin_musique": "KORN-Trash.mp3",
-        "titre": "Trash"
-      },
-      {
-        "id": "15",
-        "album_id": "3",
-        "chemin_musique": "Nirvana-Blew.mp3",
-        "titre": "Blew"
-      },
-      {
-        "id": "16",
-        "album_id": "4",
-        "chemin_musique": "Nirvana-Come-As-You-Are.mp3",
-        "titre": "Come As You Are"
-      },
-      {
-        "id": "17",
-        "album_id": "10",
-        "chemin_musique": "Queen-Killer-Queen.mp3",
-        "titre": "Killer Queen"
-      },
-      {
-        "id": "18",
-        "album_id": "9",
-        "chemin_musique": "Queen-Sweet-Lady.mp3",
-        "titre": "Sweet Lady"
-      },
-      {
-        "id": "19",
-        "album_id": "19",
-        "chemin_musique": "Tenacious D- Tribute . mp3",
-        "titre": "Tribute"
-      }
-    ]
   }
 ]
-

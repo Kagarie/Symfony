@@ -1,18 +1,19 @@
 import axios from 'axios'
 
-//getters
-const getters = {
-    //return un tableau d objets d albums
-    getAlbums() {
-        let albums = [];
+const state = () => ({
+    albums: []
+})
 
+//mutations
+const mutations = {
+    chargerAlbums(state) {
         axios.get("api/data.json")
-            .then(rep => albums.push(rep.data[0].albums))
+            .then(rep => state.albums=rep.data[0].album)
             .catch(error => console.log(error));
-        return albums;
     },
 }
 export default {
     namespaced: true,
-    getters,
+    state,
+    mutations,
 }

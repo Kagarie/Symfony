@@ -50,7 +50,7 @@ export default {
   },
   computed: {
     albums() {
-      return this.$store.getters["album/getAlbums"][0]
+      return this.$store.state.album.albums
     },
     totalPanier() {
       return this.$store.getters["panier/totalPanier"]

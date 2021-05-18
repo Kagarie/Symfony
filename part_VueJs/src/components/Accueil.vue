@@ -10,13 +10,18 @@
       </div>
     </header>
     <section style="text-align: center;">
-      <div v-for="(g,index) in groupes" :key="index"
-           style="width: 19%; display: inline-block; text-align: center; border: 1px solid; margin: 1em">
-        <a href="#" :alt="g.nom">
-          <h2>{{ g.nom }}</h2>
-          <p>Nombre de membres : {{ g.nombre_membre }}</p>
-          <img :src="path(g.chemin_logo)" alt="img">
-        </a>
+      <div v-if="chargerApi">
+        <div v-for="(g,index) in groupes" :key="index"
+             style="width: 19%; display: inline-block; text-align: center; border: 1px solid; margin: 1em">
+          <a href="#" :alt="g.nom">
+            <h2>{{ g.nom }}</h2>
+            <p>Nombre de membres : {{ g.nombre_membre }}</p>
+            <img :src="path(g.chemin_logo)" alt="img">
+          </a>
+        </div>
+      </div>
+      <div v-else>
+        <p style="text-align: center">Problème lors du chargement des données</p>
       </div>
     </section>
   </div>
@@ -26,17 +31,21 @@
 export default {
   name: 'Accueil',
   computed: {
-    //fonction pour retourner tous les groupes de mon store
     groupes() {
-      return this.$store.getters["groupe/getGroupe"][0]
-    }
+      return this.$store.state.groupe.groupes
+    },
+    chargerApi() {
+      return this.$store.state.album.albums.length > 1 && this.$store.state.groupe.groupes.length > 1
+    },
+
   },
   methods: {
     path(str) {
       return "images/groupe_logo/" + str;
-    }
+    },
   }
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

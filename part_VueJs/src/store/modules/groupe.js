@@ -1,19 +1,19 @@
 import axios from "axios"
 
-//getters
-const getters = {
-    getGroupe() {
-
-        let groupes = new Array();
-
+const state = () => ({
+    groupes: [],
+})
+//mutations
+const mutations = {
+    chargerGroupe(state) {
         axios.get("api/data.json")
-            .then(rep => groupes.push(rep.data[1].groupes))
+            .then(rep => state.groupes =rep.data[1].groupe)
             .catch(error => console.log(error));
-        return groupes;
     },
 }
 
 export default {
-    namespaced:true,
-    getters,
+    namespaced: true,
+    state,
+    mutations,
 }
