@@ -31,4 +31,4 @@ Dans tous les cas vous aurez 3 utilisateurs avec chacun un rôle différent pour
 ----
 ## Autre 
 
-Ce site utilise une template libre de droit que j'ai modifié en grande partie. De plus, n'étant pas le visuel du site qui est pris en compte je me suis pas atterdé dessus et je suis le premier à dire qu'il est loin d'être beau
+Ce site utilise une template libre de droit que j'ai modifié en grande partie. De plus, n'étant pas le visuel du site qui est pris en compte je me suis pas atterdé dessus.
