@@ -9,24 +9,26 @@
         <div class="navbar-nav">
           <router-link class="nav-item nav-link" to="/">Accueil</router-link>
 
-          <router-link class="nav-item nav-link" to="Catalogue">Catalogue</router-link>
+          <router-link class="nav-item nav-link" to="/Catalogue">Catalogue</router-link>
 
-          <router-link class="nav-item nav-link" to="Panier">Panier</router-link>
-
+          <router-link class="nav-item nav-link" to="/Panier">Panier</router-link>
         </div>
       </div>
     </div>
-    <router-view/>
+      <router-view></router-view>
   </div>
 </template>
 
 <script>
+export default {
+  name: 'App',
+}
 
 </script>
 <style scoped>
 #nav {
   background: #212529;
-padding: 1em  1em 1em;
+  padding: 1em 1em 1em;
 }
 
 #nav a {
@@ -37,4 +39,5 @@ padding: 1em  1em 1em;
 #nav a.router-link-exact-active {
   color: #ffffff;
 }
+
 </style>
