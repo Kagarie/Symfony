@@ -7,6 +7,8 @@
     {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
     {% block stylesheets %}
+        <link rel="stylesheet" href="../css/components.css">
+        <link rel="stylesheet" href="../css/icons.css">
         <link rel="stylesheet" href="../css/responsee.css">
         <link rel="stylesheet" href="../owl-carousel/owl.carousel.css">
         <link rel="stylesheet" href="../owl-carousel/owl.theme.css">
@@ -83,27 +85,4 @@
 
 {% endblock %}
 </body>
-{% block footer %}
-    <footer style=" position:absolute;
-   width:100%;
-   height:100px;
-    margin-top: 2em;">
-        <div class="background-dark padding text-center footer-social">
-
-            <a href="https://github.com/Kagarie" target="_blank"><i class="icon-sli-social-github text-size-30"></i></a>
-            <a href="https://www.univ-larochelle.fr" target="_blank"></i> <span
-                        class="text-strong text-white hide-s hide-m">Fac de la rochelle</span></a>
-
-        </div>
-
-        <!-- Bottom Footer -->
-        <section class="padding background-dark full-width">
-            <div class="text-center">
-                <p class="text-size-12">Copyright 2019, Vision Design - graphic zoo</p>
-                <p class="text-size-12">All images is purchased from Bigstock. Do not use the images in your
-                    website.</p>
-            </div>
-        </section>
-    </footer>
-{% endblock %}
 </html>
